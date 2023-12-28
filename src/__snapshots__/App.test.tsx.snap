@@ -8,9 +8,13 @@ exports[`<App /> should Match snapShot 1`] = `
       <div
         class="App"
       >
-        <div>
-          this is to test 
-        </div>
+        <p>
+          Successfully Deployed 
+          <code>
+            A React application
+          </code>
+           to Netlify with CircleCI
+        </p>
       </div>
     </div>
   </body>,
@@ -18,9 +22,13 @@ exports[`<App /> should Match snapShot 1`] = `
     <div
       class="App"
     >
-      <div>
-        this is to test 
-      </div>
+      <p>
+        Successfully Deployed 
+        <code>
+          A React application
+        </code>
+         to Netlify with CircleCI
+      </p>
     </div>
   </div>,
   "debug": [Function],
