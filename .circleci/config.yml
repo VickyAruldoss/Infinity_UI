@@ -22,7 +22,7 @@ jobs:
           key: app-build-cache-{{ .Branch }}
           paths:
             - ./build
-      - test:
+      - run:
           name: unit test
           command: yarn test
       - run:
