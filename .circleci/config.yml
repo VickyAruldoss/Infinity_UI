@@ -78,4 +78,4 @@ workflows:
             - build
       - deploy:
           requires:
-            - test
+            - test_and_lint
