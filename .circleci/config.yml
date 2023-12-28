@@ -24,16 +24,7 @@ jobs:
           paths:
             - ./node_modules
           key: dependency-cache-{{ checksum "package-lock.json" }}
-
-      - run: 
-          name: Build App
-          command: yarn build
-      - save_cache:
-          paths:
-            - ./build
-          key: app-build-cache-{{ .Branch }}
-          
-
+ 
   test:
     docker:
       - image: cimg/node:18.16.0
@@ -55,7 +46,16 @@ jobs:
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
-            - app-build-cache-{{ .Branch }}
+
+      - run: 
+          name: Build App
+          command: yarn build
+
+      - save_cache:
+          paths:
+            - ./build
+          key: app-build-cache-{{ .Branch }}
+
       - run:
           name: Deploy to Netlify
           command: ./node_modules/.bin/netlify deploy --site 0ad85f80-e847-42d1-9d09-2d60f27fe33a --auth nfp_9U49a7JprWL5rKEEnUoTEHTaJJEpyUL25d03 --prod --dir=build
