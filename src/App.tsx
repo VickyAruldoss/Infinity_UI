@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      <div>this is to test </div>
+      <p>Successfully Deployed <code>A React application</code> to Netlify with CircleCI</p>
     </div>
   );
 }
