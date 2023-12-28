@@ -1,1 +1,6 @@
-node_modules/
+# dependency directory
+node_modules
+
+#Test generated
+coverage
+!coverage/.gitkeep
