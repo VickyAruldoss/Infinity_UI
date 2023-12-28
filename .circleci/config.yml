@@ -27,6 +27,13 @@ jobs:
       - run:
           name: Build React App
           command: yarn build
+      - save_cache:
+          key: app-build-cache-{{ .Branch }}
+          paths:
+            - ./build
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site 0ad85f80-e847-42d1-9d09-2d60f27fe33a --auth nfp_9U49a7JprWL5rKEEnUoTEHTaJJEpyUL25d03 --prod --dir=build
 workflows:
   version: 2
   build-deploy:
