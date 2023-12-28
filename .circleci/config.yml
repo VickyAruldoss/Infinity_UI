@@ -25,7 +25,7 @@ jobs:
             - ./node_modules
           key: dependency-cache-{{ checksum "package-lock.json" }}
  
-  test:
+  test_and_lint:
     docker:
       - image: cimg/node:18.16.0
     working_directory: ~/repo
@@ -34,7 +34,15 @@ jobs:
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
-      - run: yarn test --coverage
+      - run:
+          name: Prettier
+          command: yarn pretty
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Unit Tests
+          command: yarn test --coverage
 
   deploy:
     docker:
@@ -65,7 +73,7 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test:
+      - test_and_lint:
           requires:
             - build
       - deploy:
