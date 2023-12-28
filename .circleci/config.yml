@@ -28,6 +28,8 @@ jobs:
           key: app-build-cache-{{ .Branch }}
           paths:
             - ./build
+  deploy:
+    steps:
       - run:
           name: Deploy to Netlify
           command: ./node_modules/.bin/netlify deploy --site 0ad85f80-e847-42d1-9d09-2d60f27fe33a --auth nfp_9U49a7JprWL5rKEEnUoTEHTaJJEpyUL25d03 --prod --dir=build
@@ -40,3 +42,6 @@ workflows:
             branches:
               only:
                 - main
+      - deploy:
+        requires:
+          - build-and-test
