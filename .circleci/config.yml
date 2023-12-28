@@ -1,13 +1,10 @@
-# Java Gradle CircleCI 2.0 configuration file
-# See: https://circleci.com/docs/2.0/language-java/
+
 version: 2
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: cimg/node:18.16.0
 
     working_directory: ~/repo
@@ -29,41 +26,27 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
 
       - run: 
-          name: Build React App
+          name: Build App
           command: yarn build
       - save_cache:
-          key: app-build-cache-{{ .Branch }}
           paths:
             - ./build
+          key: app-build-cache-{{ .Branch }}
+          
 
   test:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      # specify the version you desire here
       - image: cimg/node:18.16.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
     working_directory: ~/repo
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
-
       - run: yarn test --coverage
 
   deploy:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      # specify the version you desire here
       - image: cimg/node:18.16.0
 
     working_directory: ~/repo
