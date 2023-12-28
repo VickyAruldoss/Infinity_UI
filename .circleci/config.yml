@@ -18,6 +18,9 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - run:
+          name: Lint
+          command: yarn lint
       - run: 
           name: Test Application
           command: yarn test
