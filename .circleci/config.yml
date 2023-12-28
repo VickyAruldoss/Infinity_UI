@@ -1,47 +1,18 @@
-version: 2.1
-orbs:
-  node: circleci/node@4.7.0
-
 jobs:
   build:
-    working_directory: ~/repo
     docker:
-      - image: cimg/node:18.16.0
+      - image: cimg/base:2023.06
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: Build React App
-          command: yarn build
-      - save_cache:
-          key: app-build-cache-{{ .Branch }}
-          paths:
-            - ./build
+      - run: yarn install
   test:
-    working_directory: ~/repo
     docker:
-      - image: cimg/node:18.16.0
+      - image: cimg/base:2023.06
     steps:
       - checkout
-      - run:
-        name: unit test
-        command: yarn test --coverage
+      - run: yarn test --coverage
 workflows:
-  version: 2
-  build-deploy:
+  build_and_test:
     jobs:
       - build
-      - test:
-        requires:
-          - build
-        filters:
-            branches:
-              only: master # only deploy when on main/master
+      - test
