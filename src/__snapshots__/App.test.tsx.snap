@@ -13,7 +13,7 @@ exports[`<App /> should Match snapShot 1`] = `
           <code>
             A React application
           </code>
-           to Netlify with CircleCI
+           to Netlify with CircleCI version 3
         </p>
       </div>
     </div>
@@ -27,7 +27,7 @@ exports[`<App /> should Match snapShot 1`] = `
         <code>
           A React application
         </code>
-         to Netlify with CircleCI
+         to Netlify with CircleCI version 3
       </p>
     </div>
   </div>,
