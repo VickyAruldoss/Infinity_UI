@@ -3,7 +3,7 @@ const App = (): JSX.Element => {
     <div className='App'>
       <p>
         Successfully Deployed <code>A React application</code> to Netlify with CircleCI version 3
-        added pre commit hooks test
+        added pre commit and pre push hooks test
       </p>
     </div>
   )
