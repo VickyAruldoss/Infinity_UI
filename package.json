@@ -64,6 +64,5 @@
     "netlify-cli": "^17.10.1",
     "prettier": "^3.1.1",
     "ts-jest": "^29.1.1"
-  },
-  "postinstall": "cp scripts/pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit  && echo 'hook copied'"
+  }
 }
