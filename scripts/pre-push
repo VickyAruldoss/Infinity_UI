@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+current_branch=$(git symbolic-ref --short head)
+
+cmd="yarn test --coverage"
+
+echo "Running Prepush hook"
+
+if [[ $current_branch = "YOURBRANCH" ]]; then
+    echo "you are on $current_branch, running build test"
+    eval $cmd
+    result=$?
+    if ! eval "$cmd"; then
+        echo "failed $cmd" >&2
+        exit 1
+    fi
+fi
+exit 0
