@@ -9,7 +9,7 @@ exports[`<App /> should Match snapShot 1`] = `
         class="App"
       >
         <p>
-          Surya loves Pavi
+          Tamilarasn Loves Sudha ❤️
         </p>
       </div>
     </div>
@@ -19,7 +19,7 @@ exports[`<App /> should Match snapShot 1`] = `
       class="App"
     >
       <p>
-        Surya loves Pavi
+        Tamilarasn Loves Sudha ❤️
       </p>
     </div>
   </div>,
