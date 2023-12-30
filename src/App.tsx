@@ -1,7 +1,7 @@
 const App = (): JSX.Element => {
   return (
     <div className='App'>
-      <p>Tamilarasn Loves Sudha ❤️</p>
+      <p>Tamilarasan Loves Sudha ❤️</p>
     </div>
   )
 }
