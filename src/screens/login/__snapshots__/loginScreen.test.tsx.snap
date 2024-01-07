@@ -1,45 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> should Match snapShot 1`] = `
+exports[`<LoginScreen /> should matchsnapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="App"
-      >
-        <div
-          class="sc-bcXGCL dctYXo"
-        >
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="App"
-    >
       <div
         class="sc-bcXGCL dctYXo"
       >
@@ -65,6 +30,33 @@ exports[`<App /> should Match snapShot 1`] = `
           thisisoinsn
         </p>
       </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bcXGCL dctYXo"
+    >
+      <p>
+        thisisoinsn
+      </p>
+      <p>
+        thisisoinsn
+      </p>
+      <p>
+        thisisoinsn
+      </p>
+      <p>
+        thisisoinsn
+      </p>
+      <p>
+        thisisoinsn
+      </p>
+      <p>
+        thisisoinsn
+      </p>
+      <p>
+        thisisoinsn
+      </p>
     </div>
   </div>,
   "debug": [Function],

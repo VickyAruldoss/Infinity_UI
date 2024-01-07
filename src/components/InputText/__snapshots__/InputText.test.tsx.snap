@@ -1,70 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> should Match snapShot 1`] = `
+exports[`<InputText /> should match snapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="App"
-      >
-        <div
-          class="sc-bcXGCL dctYXo"
-        >
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-          <p>
-            thisisoinsn
-          </p>
-        </div>
+      <div>
+        inputText
       </div>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="App"
-    >
-      <div
-        class="sc-bcXGCL dctYXo"
-      >
-        <p>
-          thisisoinsn
-        </p>
-        <p>
-          thisisoinsn
-        </p>
-        <p>
-          thisisoinsn
-        </p>
-        <p>
-          thisisoinsn
-        </p>
-        <p>
-          thisisoinsn
-        </p>
-        <p>
-          thisisoinsn
-        </p>
-        <p>
-          thisisoinsn
-        </p>
-      </div>
+    <div>
+      inputText
     </div>
   </div>,
   "debug": [Function],
